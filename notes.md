@@ -13,6 +13,7 @@ Add [Atmosphere](https://atmosphere.meteor.com/) package
 ---
 ```sh
 $ mrt add bootstrap
+$ mrt add coffeescript
 ```
 
 Add smart package
@@ -20,4 +21,32 @@ Add smart package
 ```sh
 $ meteor add underscore
 ```
+
+Deploy as meteor subdomain
+```sh
+$ meteor deploy app_name.meteor.com
+$ meteor deploy app_name.meteor.com -p
+```
+
+Deploy with modulus
+```sh
+$ npm install -g modulus
+$ modulus login
+$ modulus env set MONGO_URL "mongodb://<user>:<pass>@mongo.onmodulus.net:27017/<database_name>"
+$ modulus deploy
+```
+
+Deploy on own server (Digital Ocean or AWS) using Meteor Up
+```sh
+$ npm install -g mup
+$ mkdir ~/microscope-deploy
+$ cd ~/microscope-deploy
+$ mup init
+$ mup setup
+$ mup deploy
+$ mup logs -f
+```
+mup.json holds deployment-related settings
+settings.json holds app-related settings (OAuth tokens, analytics tokens, etc.)
+
 

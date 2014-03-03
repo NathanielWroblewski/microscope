@@ -49,4 +49,43 @@ $ mup logs -f
 mup.json holds deployment-related settings
 settings.json holds app-related settings (OAuth tokens, analytics tokens, etc.)
 
+Template
+---
+List
+```html
+<template name="postsList">
+  {{#each posts}}
+    {{> postItem}}
+  {{/each}}
+</template>
+```
+
+Item
+```html
+<template name="postItem">
+  <a href="{{url}}">{{title}}</a>{{domain}}
+</template>
+```
+
+Controller
+---
+List
+```js
+Template.postsList.helpers({
+  posts: [{url: ... },...]
+});
+```
+
+Item
+```js
+Template.postItem.helpers({
+  domain: function() {
+    var a = document.createElement('a');
+    a.href = this.url;
+    return a.hostname;
+  }
+});
+```
+
+
 

@@ -26,16 +26,23 @@ Open Local Mongo console
 ---
 ```sh
 $ meteor mongo
-$ mtr mongo
+$ mrt mongo
 > db.posts.insert({title: 'A new post'})
 > db.posts.find();
 ```
 
 Open remote mongo console (if hosted on meteor.com)
 ---
-```
+```sh
 $ meteor mongo app_name
 ```
+
+Reset database
+---
+```sh
+$ meteor reset
+```
+
 
 Deploy as meteor subdomain
 ```sh

@@ -22,6 +22,21 @@ Add smart package
 $ meteor add underscore
 ```
 
+Open Local Mongo console
+---
+```sh
+$ meteor mongo
+$ mtr mongo
+> db.posts.insert({title: 'A new post'})
+> db.posts.find();
+```
+
+Open remote mongo console (if hosted on meteor.com)
+---
+```
+$ meteor mongo app_name
+```
+
 Deploy as meteor subdomain
 ```sh
 $ meteor deploy app_name.meteor.com
